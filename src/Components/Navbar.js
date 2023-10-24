@@ -1,7 +1,7 @@
-
+import "./Styles/Navbar.css"
 function Navbar() {
     return (
-        <nav>
+        <nav className="navbar">
             <a className='btn' href="/">Home</a>
             <a className='btn' href="/help">Help</a>
             <a className='btn' href="/pizza">Order Now</a>

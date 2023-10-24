@@ -3,7 +3,7 @@ import OrderForm from "../Components/OrderForm";
 function OrderPage() {
   
   return (
-    <div>
+    <div className="page">
       <h1>Build Your Own Pizza</h1>
       
       <OrderForm/>

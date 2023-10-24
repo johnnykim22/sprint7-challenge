@@ -6,9 +6,13 @@ import "./App.css";
 import Success from "./Pages/Success";
 import Header from "./Components/Header";
 
+import OrderForm from "./Components/OrderForm";
+import Favorites from "./Components/Favorites";
+import PizzaCard from "./Components/PizzaCard";
+import Navbar from "./Components/Navbar";
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
 
       <Routes>

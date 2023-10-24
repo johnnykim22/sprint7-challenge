@@ -5,7 +5,7 @@ import Banner from "../Components/Banner";
 import Favorites from "../Components/Favorites";
 function HomePage() {
   return (
-    <div className="homePage">
+    <div className="page">
   
      <Banner/>
      <Favorites/>

@@ -2,7 +2,7 @@ import React from "react";
 
 function Success() {
   return (
-    <div className="bloomtech-pizza-container">
+    <div className="page bloomtech-pizza-container">
     
 
       <main className="main-content">
