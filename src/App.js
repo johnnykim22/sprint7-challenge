@@ -9,7 +9,6 @@ import Header from "./Components/Header";
 function App() {
   return (
     <div>
-    
       <Header />
 
       <Routes>
@@ -17,8 +16,6 @@ function App() {
         <Route path="/pizza" element={<OrderPage />} />
         <Route path="/success" element={<Success />} />
       </Routes>
-
-      
     </div>
   );
 }
