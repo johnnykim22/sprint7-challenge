@@ -3,6 +3,11 @@ import { useState } from "react";
 import * as Yup from "yup";
 import axios from "axios";
 
+
+const schema = Yup.object().shape({
+  name: Yup.string().min(2, "name must be at least 2 characters"),
+});
+
 const initialFormValues = {
   name: "",
   size: "",
@@ -17,9 +22,7 @@ const initialErrorValues = {
   name: "",
 };
 
-const schema = Yup.object().shape({
-  name: Yup.string().min(2, "name must be at least 2 characters"),
-});
+
 
 export default function OrderForm() {
   const [size, setSize] = useState("");
@@ -47,10 +50,11 @@ export default function OrderForm() {
           setErrors({ ...errors, [e.target.name]: err.errors[0] })
         );
     }
+    console.log(errors);
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
+    
     axios
       .post("https://reqres.in/api/orders", formValues)
       .then((res) => console.log(res));
@@ -59,12 +63,12 @@ export default function OrderForm() {
   return (
     <form id="pizza-form" onSubmit={onFormSubmit}>
       <div>
-        <label id="size-dropdown">Choice of Size</label>
-        <select value={size} onChange={(e) => setSize(e.target.value)}>
+        <label >Choice of Size</label>
+        <select id="size-dropdown" value={size} onChange={(e) => setSize(e.target.value)}>
           <option value="Small">Small</option>
           <option value="Medium">Medium</option>
           <option value="Large">Large</option>
-          <option value="XL">XL</option>
+         
         </select>
       </div>
 
@@ -195,14 +199,16 @@ export default function OrderForm() {
       </div>
 
       <div>
-        <label id="special-text">Special Instructions</label>
+      <input name="specialText" id="special-text" value={formValues.specialText} onChange={onFormChange} />
+        <label  name='specialText' id="special-text">Special Instructions</label>
         <textarea
           value={specialInstructions}
           onChange={(e) => setSpecialInstructions(e.target.value)}
         ></textarea>
         <div>
-          <label id="name-input">Name:</label>
-          <input
+          <label>Name:</label>
+          <input 
+            id='name-input'
             type="text"
             onChange={onFormChange}
             name="name"
@@ -212,7 +218,7 @@ export default function OrderForm() {
         </div>
       </div>
 
-      <button id="order-button" className="btn">
+      <button id="order-button" className="btn" disabled={!!errors.name}>
         Submit Order
       </button>
     </form>
