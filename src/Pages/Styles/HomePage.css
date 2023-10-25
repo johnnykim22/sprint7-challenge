@@ -1,0 +1,62 @@
+/* Basic reset and body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+
+/* Main title and subtitle */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Search bar styling */
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Food cards container */
+.food-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Single food card */
+.food-card {
+    width: calc(33.33% - 20px); /* For 3 cards in a row with a little gap */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.food-card img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+/* For the delivery details */
+.delivery-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
